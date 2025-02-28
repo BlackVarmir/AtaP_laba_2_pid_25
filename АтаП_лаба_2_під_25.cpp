@@ -10,7 +10,10 @@ void sortEvenAscending(int** pointers, int size) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
             if (*pointers[j] > *pointers[j + 1]) {
-                swap(*pointers[j], *pointers[j + 1]);
+                // Ручний обмін значень
+                int temp = *pointers[j];
+                *pointers[j] = *pointers[j + 1];
+                *pointers[j + 1] = temp;
             }
         }
     }
@@ -20,11 +23,15 @@ void sortOddDescending(int** pointers, int size) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
             if (*pointers[j] < *pointers[j + 1]) {
-                swap(*pointers[j], *pointers[j + 1]);
+                // Ручний обмін значень
+                int temp = *pointers[j];
+                *pointers[j] = *pointers[j + 1];
+                *pointers[j + 1] = temp;
             }
         }
     }
 }
+
 
 void Task1() {
     srand(time(0));
@@ -306,42 +313,42 @@ int main() {
     while (true) {
 
 		cout << "Виберіть завдання (1-6) або 0 для виходу: ";
-        int in;
-        cin >> in;
+    int in;
+    cin >> in;
 
 		if (in == 0) {
 			break;
 		}
 
-        switch (in) {
-        case 1:
-            Task1();
+    switch (in) {
+    case 1:
+        Task1();
 			cout << endl;
-            break;
-        case 2:
-            Task2();
+        break;
+	case 2:
+		Task2();
 			cout << endl;
-            break;
-        case 3:
-            Task3();
+		break;
+    case 3:
+        Task3();
 			cout << endl;
-            break;
-        case 4:
-            Task4();
+        break;
+	case 4:
+		Task4();
 			cout << endl;
-            break;
-        case 5:
-            Task5();
+		break;
+	case 5:
+		Task5();
 			cout << endl;
-            break;
-        case 6:
-            Task6();
+		break;
+	case 6:
+		Task6();
 			cout << endl;
-            break;
-        default:
-            cout << "Невірний вибір! Введіть 1, 2, 3, 4, 5 або 6 щоб вибрати завдання" << endl;
-            break;
-        }
+		break;
+    default:
+        cout << "Невірний вибір! Введіть 1, 2, 3, 4, 5 або 6 щоб вибрати завдання" << endl;
+        break;
+    }
     }
 
     return 0;
