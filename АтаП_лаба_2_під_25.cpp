@@ -10,7 +10,6 @@ void sortEvenAscending(int** pointers, int size) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
             if (*pointers[j] > *pointers[j + 1]) {
-                // Ручний обмін значень
                 int temp = *pointers[j];
                 *pointers[j] = *pointers[j + 1];
                 *pointers[j + 1] = temp;
@@ -23,7 +22,6 @@ void sortOddDescending(int** pointers, int size) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
             if (*pointers[j] < *pointers[j + 1]) {
-                // Ручний обмін значень
                 int temp = *pointers[j];
                 *pointers[j] = *pointers[j + 1];
                 *pointers[j + 1] = temp;
